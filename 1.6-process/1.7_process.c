@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-#define MAXLINE 1024
+#define MAXLINE 10
 int main()
 {
 	char buf[MAXLINE];
@@ -15,7 +15,6 @@ int main()
 		if(buf[strlen(buf) - 1]=='\n')
 		{
 			buf[strlen(buf) -1] = 0;
-	
 		}
 		if((pid = fork()) < 0){
 			printf("fork error");
@@ -27,8 +26,8 @@ int main()
 		/*parent*/
 		if((pid =waitpid(pid,&status,0)) < 0){
 			printf("waitpid error");
-		}
-		printf("%%");
+		}else
+			printf("%%");
 	}
 	exit(0);
 }	
