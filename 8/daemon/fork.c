@@ -1,22 +1,41 @@
+/*
+ *------------------------------------------------------------------------------
+ *
+ *    Copyright (C) 2015-2016 Chengdu Skysoft Info&Tech Co., Ltd. All rights reserved.
+ *    All source codes is distributed under the U-License.
+ *
+ *    CPU:        x86  
+ *    RTOS:      
+ *    Version:    0.50.00
+ *    Released by Chengdu Skysoft Info&Tech Co., Ltd.
+ *                  2015/09/20.
+ *
+ *
+ *  File Name    : daemon.c
+ *  Create Date  : 2015/09/20
+ *  Author   : Nick Li
+ *  Description  : Use Main Interface function definition.
+ *-------------------------------------------------------------------------------
+ */
+ 
 #include<stdio.h>
-
-
-
-int main(){
-	
-	
-	int ret = 0;
-	if((ret = fork())==0){
-		printf("I'm the sun,My pid is %d!\n",getpid());
-		printf("the parent's pid is %d\n\n",getppid());
-	}else if(ret > 0){
-		printf("I'm the father My pid is %d!\n\n",getpid());
-		printf("the parent's pid is %d\n\n",getppid());
-		
-	}else{
-		printf("error in fork!");   
-	}
-	
-	
-	
+#include<time.h>
+void init_daemon(void);
+int main()
+{
+ FILE * fp;
+ time_t t;
+ 
+ init_daemon();/*init the daemon*/
+ 
+ while(1){
+  sleep(60);
+  if((fp=fopen("/tmp/daemon_test.log","a")) >= 0){
+   t= time(0);
+   fprintf(fp,"\33[31mIm here\33[0m  \33[33mat %s\33[0m \n",asctime(localtime(&t)));
+   fclose(fp);
+  }
+ }
+ return 0;
+ 
 }
