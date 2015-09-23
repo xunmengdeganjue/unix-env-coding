@@ -22,9 +22,9 @@ main(void)
 	pid_t pid;
 	int status;
  	
-	if((pid = fork())<0)
+	if((pid = fork()) < 0)
 		err_sys("fork error");
-	else if(pid ==0)
+	else if(pid == 0)
 		exit(7);
 
 	if(wait(&status) != pid)
@@ -33,7 +33,7 @@ main(void)
 	
 	if((pid = fork()) < 0)
 		err_sys("wait error");
-	else if (pid ==0)
+	else if (pid == 0)
 		abort(); //generates SIGABRT
 	
 	if(wait(&status) != pid)
@@ -43,7 +43,7 @@ main(void)
 	if((pid = fork()) < 0)
 		err_sys("fork error");
 	else if (pid == 0)
-	status /=0;  //devide by 0 generates SIGFPE
+	status /= 0;  //devide by 0 generates SIGFPE
 
 	if(wait(&status) != pid)
 		err_sys("wait error");
