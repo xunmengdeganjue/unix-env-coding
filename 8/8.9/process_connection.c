@@ -13,7 +13,7 @@
  *
  *  File Name    : process_connection.c
  *  Create Date  : 2015/09/20
- *  Author   : Nick Li
+ *  Author   	 : Li Qiyuan 
  *  Description  : This progrom is just to test the connection between the processes.
  *-------------------------------------------------------------------------------
  */
