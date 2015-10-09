@@ -7,7 +7,7 @@
  *    CPU:        x86  
  *    RTOS:      
  *    Version:    0.50.00
- *    Released by Chengdu Skysoft Info&Tech Co., Ltd.
+ *    Released by Nick Li
  *                  2015/10/09.
  *
  *
@@ -20,6 +20,7 @@
  *-------------------------------------------------------------------------------
  */
  #include"../../include/apue.h"
+ #include "function.h"
  
  static void charatatime(char *);
  int main(void)
