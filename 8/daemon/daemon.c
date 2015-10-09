@@ -1,3 +1,23 @@
+/*
+ *------------------------------------------------------------------------------
+ *
+ *    Copyright (C) 2015-2016 Chengdu Skysoft Info&Tech Co., Ltd. All rights reserved.
+ *    All source codes is distributed under the U-License.
+ *
+ *    CPU:        x86  
+ *    RTOS:      
+ *    Version:    0.50.00
+ *    Released by Chengdu Skysoft Info&Tech Co., Ltd.
+ *                  2015/09/20.
+ *
+ *
+ *  File Name    : daemon.c
+ *  Create Date  : 2015/09/20
+ *  Author   : Nick Li
+ *  Description  : Use Main Interface function definition.
+ *-------------------------------------------------------------------------------
+ */
+
 #include<stdio.h>
 #include<time.h>
 
