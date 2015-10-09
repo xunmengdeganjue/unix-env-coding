@@ -44,7 +44,7 @@
  {
 	 char *ptr;
 	 int c;
-	 setbuf(stdout,NULL);
+	 setbuf(stdout,NULL); /*set unbuffered*/
 	 for(ptr = str; (c=*ptr++)!= 0;)
 		putc(c, stdout);
  }
