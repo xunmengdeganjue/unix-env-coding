@@ -19,6 +19,32 @@
  */
  
 #include"../../include/apue.h"
-//#include<sys/wait.h>
 
 
+int main(){
+
+	pid_t pid;
+	
+	TELL_WAIT();
+	
+	if((pid = fork())<0){
+		err_sys("fork error");
+	}else if (pid == 0){		/*child*/
+		/*child does whatever is necessary...*/
+		TELL_PARENT(getppid());	/*tell parent we're done*/
+		WAIT_PARENT();			/*and wait for parent*/
+		
+		/*then the child continues on its way...*/
+		
+		exit(0);
+	}else{						/*parent*/
+		/*parent does whatever is necessary...*/
+		TELL_CHILD(pid);		/*tell the child we're done*/
+		WAIT_CHILD();			/*and wait for the child*/
+		
+		/*then the parent continues on its way...*/
+		
+		exit(0);	
+	}
+	return (0);
+}
