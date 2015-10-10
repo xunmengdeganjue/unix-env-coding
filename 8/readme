@@ -1,3 +1,7 @@
-README
+
 This folder contains the test code in the charpter 8,which is one charpter of the "advanced programming unix environment" book.
 本文件夹中包含了所有的进程控制相关的测试代码。
+
+内容介绍：
+8.9：进程间“竞争”的演示，及处理方法；实现通过信号机制来避免“竞争”出现；
+8.10：测试实验了execlp、execle接口的功能；实现打印命令行参数及环境变量子程序；
