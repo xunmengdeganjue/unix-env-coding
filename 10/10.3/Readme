@@ -1,5 +1,5 @@
 简介：
-  本目录内程序是对signal的应用测试，
+  本目录内程序是对signal的应用测试，程序会对用户自定义信号进行捕捉，并打印信号。
 编译方法：
   gcc -o signal signal.c
 使用方法：
@@ -8,7 +8,7 @@
   nickli@NewRouterDev:10.3$ ./signal &   
   [1] 19336
   向19336进程发送信号：
-  nickli@NewRouterDev:10.3$ kill -USR1 19336
-  received SIGUSR1
-  nickli@NewRouterDev:10.3$ kill -USR2 19336
-  received SIGUSR2
+  nickli@NewRouterDev:10.3$ kill -USR1 19336     （向进程发送SIGUSR1）
+  received SIGUSR1 [10]
+  nickli@NewRouterDev:10.3$ kill -USR2 19336     （向进程发送SIGUSR2）
+  received SIGUSR2 [12]
