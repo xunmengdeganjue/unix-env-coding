@@ -12,3 +12,7 @@
   received SIGUSR1 [10]
   nickli@NewRouterDev:10.3$ kill -USR2 19336     （向进程发送SIGUSR2）
   received SIGUSR2 [12]
+  nickli@NewRouterDev:10.3$ kill 19336     （向进程发送SIGTERM）
+  nickli@NewRouterDev:10.3$ ps -aux |grep signal
+  nickli   17750  0.0  0.0  15936   944 pts/18   S+   16:13   0:00 grep --color=auto signal
+  [1]+  Terminated              ./signal
