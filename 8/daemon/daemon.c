@@ -32,7 +32,7 @@ int main()
 	
 	while(1){
 		sleep(60);
-		if((fp=fopen("/tmp/deamon_test.log","a")) >= 0){
+		if((fp=fopen("/tmp/daemon.log","a")) >= 0){
 			t= time(0);
 			fprintf(fp,"\33[31mIm here\33[0m  \33[33mat %s\33[0m \n",asctime(localtime(&t)));
 			fclose(fp);
