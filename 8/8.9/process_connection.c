@@ -7,7 +7,7 @@
  *    CPU:        x86  
  *    RTOS:      
  *    Version:    0.50.00
- *    Released by Chengdu Skysoft Info&Tech Co., Ltd.
+ *    Released by Nick Li
  *                  2015/10/09.
  *
  *
