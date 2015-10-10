@@ -7,7 +7,10 @@
   gcc -o daemon daemon.c init.c
 使用方法：
   .daemon
+  second child,parent pid = 1
 结果：
   $ps aux |grep daemon
   nickli    4518  0.0  0.0   4192    88 ?        S    11:34   0:00 ./daemon
+  $cat /tmp/daemon.log
+  Im here  at Sat Oct 10 11:39:12 2015
   
