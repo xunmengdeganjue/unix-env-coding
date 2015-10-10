@@ -1,4 +1,13 @@
 简介：
   本目录中程序是对守护进程的简单实现，运行程序后，程序会每一分钟去打印一条记录到/tmp/daemon.log文件中。
 内容介绍：
-  （1）
+  （1）init.c：守护进程初试化；
+  （2）daemon.c：守护进程主程序；
+编译方法：
+  gcc -o daemon daemon.c init.c
+使用方法：
+  .daemon
+结果：
+  $ps aux |grep daemon
+  nickli    4518  0.0  0.0   4192    88 ?        S    11:34   0:00 ./daemon
+  
