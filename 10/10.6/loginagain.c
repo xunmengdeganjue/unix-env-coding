@@ -16,10 +16,10 @@ int main(void){
 	signal(SIGALRM,my_alarm);
 	alarm(1);
 	for(;;){
-		if((ptr = getpwnam("sar") )== NULL){
+		if((ptr = getpwnam("xiaoli") )== NULL){
 			printf("getpwname error");
 		}
-		if(strcmp(ptr->pw_name,"sar") != 0){
+		if(strcmp(ptr->pw_name,"xiaoli") != 0){
 			printf("return value corrupted!,pw_name = %s\n",ptr->pw_name);
 		}
 	}
