@@ -5,4 +5,22 @@
 使用方法：
   ./loginagain
 说明：
-  getpwnam()函数是一个非可重入的函数
+  1.getpwnam()函数是一个非可重入的函数
+  2.可以通过core文件来查看问题所在：
+    1）查看系统是否开启了core文件的生成功能
+      $ulimit -c 
+      0    (0表示系统没有开启core文件生成功能)
+    2）开启core文件生成功能
+      $ulimit -c unlimited (unlimited表示core文件大小不限制，详细请man unlimit查看)
+    3）确保代码编译时使用gdb选项
+      #gcc -g -o loginagain loginagain.c (加上“-g”选项即可)
+    4）查看core文件
+      $gdb ./loginagain       (之后，在当前目录下会生成一个core文件)
+      #gdb  -core=core        (开始查看core内容)
+      (gdb)file ./loginagain  (重新加载程序)
+      Reading symbols from ./loginagain...done.
+      (gdb)bt                 (使用bt工具来查看问题点)
+      #0  0x0000000000400730 in main () at loginagain.c:22
+  注意：每次查看core文件时，以上2 3 4步骤需要完整执行才行，所有的工作都是临时的。   
+      
+      
