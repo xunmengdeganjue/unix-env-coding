@@ -1,0 +1,13 @@
+简介：
+  本程序演示了SIGCLD信号的捕捉操作。
+编译方法：
+  $gcc -o sigcld sigcld.c
+使用方法：
+  $./sigcld
+结果：
+    $ ./sigcld
+    SIGCLD received
+    pid = 9789
+  
+说明：
+  当子进程的装填改变后会产生次信号，父进程需要调用一个wait函数以检测到底发生了什么。
