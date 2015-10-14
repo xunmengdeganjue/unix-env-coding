@@ -1,3 +1,0 @@
-rw.c 程序中使用了不带缓存的IO,调用了read write函数
-st_rw.c程序中使用了标准IO，调用了getc，putc函数
-
