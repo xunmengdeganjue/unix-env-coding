@@ -2,8 +2,9 @@
   本目录内程序是对“解释器文件”一节代码的实验。通过execl接口调用echoall程序来打印出命令行参数及进程的环境变量。
 2.文件
   （1）explain.c ：主程序，通过进程控制，并调用execle，execlp函数来调用echoall程序来实现命令详情回显功能；
-  （2）echoall.c ：被调用程序，打印命令行参数及调用进程的环境变量[源码位置：https://github.com/xunmengdeganjue/unix-env-coding/blob/master/8/8.10/echoall.c];
-  （3）testinterp：解释器文件.
+  （2）echoall.c ：被调用程序，打印命令行参数及调用进程的环境变量，其编译出来的程序echoall在本例中充当“解释器”的角色；
+  [源码位置：https://github.com/xunmengdeganjue/unix-env-coding/blob/master/8/8.10/echoall.c];
+  （3）testinterp：解释器文件，在首行中制定“解释器”.
 3.编译方法：
   gcc -o explain explain.c
   gcc -o echoall echoall.c
